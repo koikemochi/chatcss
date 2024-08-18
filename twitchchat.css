@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 body, .chat-room, .chat-line__moderation, .chat-line__status, .chat-line__message, .chat-author__display-name {
-	font-family: 'SAKURAalp',sans-serif;
 	margin: 0 auto!important;
 	overflow: hidden!important;
 	font-weight: bold!important;
