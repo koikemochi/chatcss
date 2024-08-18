@@ -1,170 +1,33 @@
 @charset "utf-8";
 
-/* 背景色 */
-body {
-    font-family: 'SAKURAalp',sans-serif;
-    margin: 6px auto !important;
-    overflow: hidden !important;
-    font-weight: bold !important;
-    font-size: 16px !important;
-    background-color: rgba(0, 0, 0, 0) !important;
-    line-height: 1.8;
-    letter-spacing: 0.1em;
-}
-
-/* 背景透過 */
-yt-live-chat-renderer,
-yt-live-chat-text-message-renderer {
-    background-color: transparent !important;
-}
-
-/* ヘッダーと入力欄消す */
-#panel-pages,
-yt-live-chat-ticker-renderer,
-yt-live-chat-header-renderer,
-yt-live-chat-message-input-renderer {
-    display: none !important;
-}
-
-/* 名前消す */
-.yt-live-chat-author-chip {
-    display: none !important;
-}
-
-/* チャンネルアイコン消す */
-yt-img-shadow {
-    display: none !important;
-}
-
-/* メンバーバッジ非表示. */
-yt-live-chat-text-message-renderer #author-badges,
-yt-live-chat-text-message-renderer #chat-badges {
-    display: none !important;
-}
-
-/* メンバー用スタンプ */
-#message>img {
-    width: 24px !important;
-    height: 24px !important;
-    background-color: transparent !important;
-}
-
-/* メンバーシップ入会非表示 */
-.yt-live-chat-membership-item-renderer {
-    display: none !important;
-}
-
-/* スーパーチャット非表示 */
-yt-live-chat-paid-message-renderer,
-yt-live-chat-paid-sticker-renderer {
-    display: none !important;
-}
-yt-live-chat-text-message-renderer a {
-    text-decoration: none !important;
-}
-
-/* 管理者アクションは非表示 */
-yt-live-chat-text-message-renderer[is-deleted],
-yt-live-chat-membership-item-renderer[is-deleted],
-yt-live-chat-moderation-message-renderer,
-yt-live-chat-auto-mod-message-renderer {
-    display: none !important;
+body, .chat-room, .chat-line__moderation, .chat-line__status, .chat-line__message, .chat-author__display-name {
+	font-family: 'SAKURAalp',sans-serif;
+	margin: 0 auto!important;
+	overflow: hidden!important;
+	font-weight: bold!important;
+	font-size: 16px!important;
+	background-color: rgba(0,0,0,0)!important;
+	line-height:1.4;
 }
 
 
-yt-live-chat-mode-change-message-renderer,
-yt-live-chat-viewer-engagement-message-renderer,
-yt-live-chat-server-error-message,
-yt-live-chat-banner-manager,
-yt-live-chat-restricted-participation-renderer {
-    display: none !important;
-}
-
-
-/* チャット欄をすごく小さくした時に表示を崩れないようにする */
-yt-live-chat-app {
-    min-height: 0px;
-    min-width: 0px;
-    word-break: break-all;
-}
-
-/* スティッカーの名前の高さ */
-div#author-name.yt-live-chat-paid-sticker-renderer,
-span#price-column {
-    line-height: unset !important;
-}
-
-/* スティッカーのサイズ */
-#sticker img {
-    width: 54px !important;
-    height: 54px !important;
-}
-
-/* 余白調整 */
-div#author-info {
-    align-items: center !important;
-    padding: 8px 16px !important;
-    max-height: unset !important;
-}
-
-/* アンケートを非表示 */
-div#action-panel.style-scope.yt-live-chat-renderer {
-    display: none;
-}
-
-
-yt-live-chat-text-message-renderer[is-deleted],
-yt-live-chat-moderation-message-renderer,
-yt-live-chat-auto-mod-message-renderer {
-    display: none;
-}
-
-yt-live-chat-text-message-renderer #content {
-    width: auto !important;
-}
-
-/* スクロールバー消す */
-yt-live-chat-item-list-renderer #items {
-    overflow: hidden !important;
-}
-
-yt-live-chat-item-list-renderer #item-scroller {
-    overflow: hidden !important;
-}
-
-
-/* 新機能のハート消す */
-yt-reaction-control-panel-overlay-view-model,
-yt-reaction-control-panel-view-model {
-    display: none;
-}
-
-
-
-/* Reduce side padding - 余白設定 */
-yt-live-chat-text-message-renderer {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
-}
-
-
-/* Messages - チャット本文 */
-yt-live-chat-text-message-renderer #message{
+.chat-line__no-background{
+  display: inline-block!important;
+  width: auto!important;
   color: var(--txtcolor) !important;
-  font-family: "BIZ UDPGothic", sans-serif;
-  font-size: 18px !important;
-  line-height: 8px !important;
-  font-weight: bold !important;
+  margin-left:8px;
+  padding: 0px 15px;
+  border-radius: 20px;
+  height: 1.3em !important;
   letter-spacing: 0.12em!important;
-
 }
 
-.yt-live-chat-text-message-renderer::before{
+.chat-line__message-container::before{
   position: absolute;
-  top: 20%;
+  top:10%;
   left: 0;
   width: 6px;
-  height: 60%;
+  height: 80%;
   content: '';
   opacity: .6;
   border-radius: 3px;
@@ -172,9 +35,50 @@ yt-live-chat-text-message-renderer #message{
   box-sizing: inherit;
 }
 
+.chat-line__username-container span:first-child {
+	display: none !important;
+}
 
-yt-live-chat-text-message-renderer #content {
-    text-indent: -0.5em;
-    padding-left:8px!important;
-    margin-top:8px;
+span[aria-hidden="true"] {
+	display: none !important;
+}
+
+
+.stream-chat-header,
+.channel-leaderboard-container,
+.tw-interactable,
+.tw-z-default,
+.chat-input,
+.chat-line__status{
+  visibility: hidden!important;
+  display:none!important;
+  width: 0!important;
+  height: 0!important;
+  border: none!important;
+}
+
+
+.user-notice-line{
+  display:none;
+}
+
+.kAQTjE,
+.hZLfAO {
+    display: none !important;
+}
+
+.community-highlight-stack__scroll-area--disable{
+  display: none!important;
+}
+
+.community-highlight-stack__backlog-card,
+.community-highlight-stack__nav-target{
+  display: none !important;
+}
+.paid-pinned-chat-message-list{
+  display: none;
+}
+
+.paid-pinned-chat-message-content-wrapper{
+  display: none!important;
 }
